@@ -1,8 +1,5 @@
 ---
-title: "Peer-graded Assignment: Course Project 1"
-output:
-  html_document: default
-  pdf_document: default
+title: 'Peer-graded Assignment: Course Project 1'
 ---
 
 
