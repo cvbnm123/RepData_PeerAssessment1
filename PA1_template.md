@@ -1,6 +1,6 @@
----
-title: 'Peer-graded Assignment: Course Project 1'
----
+
+##Peer-graded Assignment: Course Project 1
+
 
 
 
@@ -29,19 +29,20 @@ sum_steps <- aggregate(processed_data["steps"], by = processed_data["date"], sum
 
 - Create Histogram of Number of Steps per day
 ```{r}
-hist(sum_steps$steps, col = "blue", main = "Total Number of Steps per day", breaks = 10, 
+histogram <- hist(sum_steps$steps, col = "blue", main = "Total Number of Steps per day", breaks = 10, 
      xlab = "Number of Steps", ylab = "Frequency")
+histogram
 ```
 
 - Calculate Mean and Median
 ```{r}
 mean_steps <- mean(sum_steps$steps)
+mean_steps
+
 median_steps <- median(sum_steps$steps)
+median_steps
 ```
 
-The mean is `r mean_steps`.
-<br>The median is `r median_steps`.
-<br>
 
 ### What is the average daily activity pattern?
 
