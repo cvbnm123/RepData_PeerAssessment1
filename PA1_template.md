@@ -12,27 +12,36 @@ data_activity <- read.csv(file = "activity.csv", header = TRUE)
 
 ### What is mean total number of steps taken per day?
 
+- Remove NAs from data:
 ```{r}
-#Remove NAs from data:
 processed_data <- data_activity[complete.cases(data_activity),] 
+```
 
-#Format dates to date format
+- Format dates to date format
+```{r}
 processed_data$date <- as.Date(processed_data$date)
+```
 
-#Create new dataset with the sum of steps per day
+- Create new dataset with the sum of steps per day
+```{r}
 sum_steps <- aggregate(processed_data["steps"], by = processed_data["date"], sum)
+```
 
-#Create Histogram of Number of Steps per day
+- Create Histogram of Number of Steps per day
+```{r}
 hist(sum_steps$steps, col = "blue", main = "Total Number of Steps per day", breaks = 10, 
      xlab = "Number of Steps", ylab = "Frequency")
+```
 
-#Calculate Mean and Median
+- Calculate Mean and Median
+```{r}
 mean_steps <- mean(sum_steps$steps)
 median_steps <- median(sum_steps$steps)
 ```
 
 The mean is `r mean_steps`.
-The median is `r median_steps`.
+<br>The median is `r median_steps`.
+<br>
 
 ### What is the average daily activity pattern?
 
