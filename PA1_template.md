@@ -52,7 +52,7 @@ day
 <!-- end list -->
 
 ``` r
-hist(sum_steps$steps, col = "blue", main = "Total Number of Steps per day", breaks = 10, 
+hist(sum_steps$steps, col = "cyan4", main = "Total Number of Steps per day", breaks = 10, 
      xlab = "Number of Steps", ylab = "Frequency")
 ```
 
@@ -88,7 +88,7 @@ Plot
 <!-- end list -->
 
 ``` r
-plot(steps ~ interval, data = avg_steps, type = "l", col = "blue", xlab = "Interval", ylab = "Number of Steps")
+plot(steps ~ interval, data = avg_steps, type = "l", col = "cyan4", xlab = "Interval", ylab = "Number of Steps")
 ```
 
 ![](PA1_template_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> <br>
@@ -139,7 +139,7 @@ new_data <- new_data[order(new_data$date), ]
 
 ``` r
 total_steps <- with(new_data, tapply(steps, as.factor(new_data$date), sum))
-hist(total_steps, col = "blue", main = "Total Number of Steps per day", breaks = 10, 
+hist(total_steps, col = "cyan4", main = "Total Number of Steps per day", breaks = 10, 
      xlab = "Number of Steps", ylab = "Frequency")
 ```
 
@@ -181,8 +181,8 @@ weekdays_data <- subset(new_data, weekdays == "Monday" | weekdays == "Tuesday" |
 total_weekdays_steps <- aggregate(weekdays_data["steps"], by = weekdays_data["interval"], sum)
 par(mfcol = c(2, 1))
 par(mar = c(4, 4, 2, 2))
-plot(steps ~ interval, data = total_weekend_steps, type = "l", col = "blue", main = "Weekends", xlab = "Interval", ylab = "Number of Steps")
-plot(steps ~ interval, data = total_weekdays_steps, type = "l", col = "blue", main = "Weekdays", xlab = "Interval", ylab = "Number of Steps")
+plot(steps ~ interval, data = total_weekend_steps, type = "l", col = "cyan4", main = "Weekends", xlab = "Interval", ylab = "Number of Steps")
+plot(steps ~ interval, data = total_weekdays_steps, type = "l", col = "cyan4", main = "Weekdays", xlab = "Interval", ylab = "Number of Steps")
 ```
 
 ![](PA1_template_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
